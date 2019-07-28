@@ -2,6 +2,7 @@
 #define SHOWSTUDENTS_H
 
 #include <QWidget>
+#include <database.h>
 
 namespace Ui {
 class showStudents;
@@ -15,10 +16,14 @@ public:
     explicit showStudents(QWidget *parent = nullptr);
     ~showStudents();
 
+
+
+
 signals:
     void HomeClicked();
 private slots:
     void on_homeButton_clicked();
+    void on_listStudentsButton_clicked();
 
 private:
     Ui::showStudents *ui;
