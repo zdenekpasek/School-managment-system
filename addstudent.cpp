@@ -8,9 +8,8 @@ addStudent::addStudent(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
 }
-
-
 
 
 addStudent::~addStudent()
@@ -42,8 +41,14 @@ void addStudent::on_addStudentButton_clicked()
    QString registration = ui->lineEdit_registration->text();
    int subjects = ui->lineEdit_subjects->text().toInt();
 
+
    Database conn;
-   conn.addStudentToDB(name, surname, pid, residence, registration, subjects);
+   try {
+       conn.addStudentToDB(name, surname, pid, residence, registration, subjects);
+   } catch (const char *er) {
+
+   }
+
 
    clearLineEdits();
 }

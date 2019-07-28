@@ -22,6 +22,8 @@ signals:
     void HomeClicked();
 private slots:
     void on_homeButton_clicked();
+    void on_addTeacherButton_clicked();
+    void clearLineEdits();
 };
 
 #endif // ADDTEACHER_H

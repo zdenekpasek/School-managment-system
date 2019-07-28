@@ -280,7 +280,7 @@ background-color: rgb(0, 129, 23);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_surname_2">
+        <widget class="QLabel" name="label_registration">
          <property name="font">
           <font>
            <family>Arial</family>
@@ -297,7 +297,7 @@ background-color: rgb(0, 129, 23);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_surname_3">
+        <widget class="QLabel" name="label_subjects">
          <property name="font">
           <font>
            <family>Arial</family>
@@ -314,6 +314,19 @@ background-color: rgb(0, 129, 23);</string>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>400</y>
+        <width>341</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>dddd</string>
+      </property>
      </widget>
     </widget>
    </widget>

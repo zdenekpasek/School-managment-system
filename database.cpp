@@ -1,6 +1,7 @@
 #include "database.h"
 #include "showstudents.h"
 
+
 Database::Database()
 {
 
@@ -45,12 +46,41 @@ void Database::addStudentToDB(QString name, QString surname, QString pid, QStrin
     q.bindValue(":subjects", subjects);
 
     if(!q.exec()){
-        qDebug()<< "Error adding values to table.";
+        qDebug()<< "Error adding values to the table.";
     } else {
-        qDebug()<< "Sucessfully added values to table.";
+        qDebug()<< "Sucessfully added student to the table.";
 
 }
     connClose();
+
+}
+
+void Database::addTeachertToDB(QString name, QString surname, QString pid, QString residence, QString qualification, QString experience, QString subject)
+{
+    connectToDB();
+    QSqlQuery q;
+    q.prepare("INSERT INTO teachers(name, surname, pid, residence, qualification, experience, subject) VALUES (:name, :surname, :pid, :residence, :qualification, :experience, :subject)");
+    q.bindValue(":name", name);
+    q.bindValue(":surname", surname);
+    q.bindValue(":pid", pid);
+    q.bindValue(":residence", residence);
+    q.bindValue(":qualification", qualification);
+    q.bindValue(":qualification", experience);
+    q.bindValue(":subject", subject);
+
+    if(!q.exec()){
+        qDebug()<< "Error adding values to the table.";
+
+    } else {
+        qDebug()<< "Sucessfully added teacher to the table.";
+
+}
+    connClose();
+
+}
+
+void Database::removeStudentFromDB()
+{
 
 }
 

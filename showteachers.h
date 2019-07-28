@@ -21,6 +21,8 @@ signals:
 private slots:
     void on_homeButton_clicked();
 
+    void on_listTeachersButton_clicked();
+
 private:
     Ui::showteachers *ui;
 };
