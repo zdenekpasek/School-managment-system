@@ -12,15 +12,17 @@ addStudent::addStudent(QWidget *parent) :
 
    // validators and regex's
     ui->lineEdit_subjects->setValidator(new QIntValidator(1, 20, this));
-    QRegExp rx("^[a-z]{3,32}$");
+    QRegExp rx("^[A-Za-z]{3,16}\\s[A-Za-z]{3,16}$");
     QRegExp rx2("^\\d{6}\\\\\\d{4}$");
+    QRegExp rx3("^\\d{2}\\-\\d{2}\\-\\d{4}$");
     QValidator *characterVal = new QRegExpValidator(rx, this);
     QValidator *pidVal = new QRegExpValidator(rx2, this);
-    ui->lineEdit_name->setValidator(characterVal);
+    QValidator *regVal = new QRegExpValidator(rx3, this);
+    //ui->lineEdit_name->setValidator(characterVal);
     ui->lineEdit_surname->setValidator(characterVal);
     ui->lineEdit_residence->setValidator(characterVal);
     ui->lineEdit_pid->setValidator(pidVal);
-
+    ui->lineEdit_registration->setValidator(regVal);
 
 }
 

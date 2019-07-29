@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+
 namespace Ui {
 class addStudent;
 }
@@ -14,9 +15,6 @@ class addStudent : public QWidget
 public:
     explicit addStudent(QWidget *parent = nullptr);
     ~addStudent();
-
-
-
 
 
 private:

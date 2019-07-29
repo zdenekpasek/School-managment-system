@@ -98,7 +98,7 @@ background-color: rgb(255, 176, 107);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLineEdit" name="lineEdit_bydliste">
+        <widget class="QLineEdit" name="lineEdit_surname">
          <property name="font">
           <font>
            <family>Arial</family>
@@ -112,7 +112,7 @@ background-color: rgb(255, 255, 255);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="addButton">
+        <widget class="QPushButton" name="removeStudentButton">
          <property name="font">
           <font>
            <family>Arial</family>

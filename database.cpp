@@ -65,7 +65,7 @@ void Database::addTeachertToDB(QString name, QString surname, QString pid, QStri
     q.bindValue(":pid", pid);
     q.bindValue(":residence", residence);
     q.bindValue(":qualification", qualification);
-    q.bindValue(":qualification", experience);
+    q.bindValue(":experience", experience);
     q.bindValue(":subject", subject);
 
     if(!q.exec()){
@@ -79,9 +79,21 @@ void Database::addTeachertToDB(QString name, QString surname, QString pid, QStri
 
 }
 
-void Database::removeStudentFromDB()
+void Database::removeStudentFromDB(QString surname)
 {
+    connectToDB();
+    QSqlQuery q;
+    q.prepare("DELETE FROM students WHERE surname = '"+surname+"'");
 
+    if(!q.exec()){
+        qDebug()<< "Error while removing values from table.";
+
+    } else {
+        qDebug()<< "Sucessfully removed student from table.";
 }
+    connClose();
+}
+
+
 
 

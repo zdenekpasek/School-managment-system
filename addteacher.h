@@ -24,6 +24,8 @@ private slots:
     void on_homeButton_clicked();
     void on_addTeacherButton_clicked();
     void clearLineEdits();
+    bool checkLineEditString(QString le, QString le2, QString le3, QString le4, QString le5, QString le6, QString le7);
+
 };
 
 #endif // ADDTEACHER_H
