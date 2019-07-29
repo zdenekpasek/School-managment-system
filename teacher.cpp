@@ -5,32 +5,32 @@ teacher::teacher()
 
 }
 
-const string teacher::getQual() const
+const QString teacher::getQual() const
 {
     return qualification;
 }
 
-const string teacher::getExp() const
+const QString teacher::getExp() const
 {
     return exp;
 }
 
-const string teacher::getSubject() const
+const QString teacher::getSubject() const
 {
     return subject;
 }
 
-void teacher::setQual(string qualification)
+void teacher::setQual(QString qualification)
 {
     this->qualification = qualification;
 }
 
-void teacher::setExp(string exp)
+void teacher::setExp(QString exp)
 {
     this->exp = exp;
 }
 
-void teacher::setSubject(string subject)
+void teacher::setSubject(QString subject)
 {
     this->subject = subject;
 }

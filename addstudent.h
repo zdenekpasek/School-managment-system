@@ -2,6 +2,7 @@
 #define ADDSTUDENT_H
 
 #include <QWidget>
+#include <student.h>
 
 
 namespace Ui {
@@ -15,10 +16,14 @@ class addStudent : public QWidget
 public:
     explicit addStudent(QWidget *parent = nullptr);
     ~addStudent();
+    vector<Student *> students;
+
 
 
 private:
     Ui::addStudent *ui;
+
+
 
 
 signals:

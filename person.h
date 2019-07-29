@@ -4,31 +4,32 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <QString>
 
 using namespace std;
 
 class person
 {
 protected:
-    string name;
-    string surname;
-    string pid;
-    string residence;
+    QString name;
+    QString surname;
+    QString pid;
+    QString residence;
 
 public:
     person();
 
     // getters
-    const string getName() const;
-    const string getSurname() const;
-    const string getPid() const;
-    const string getResidence() const;
+    const QString getName() const;
+    const QString getSurname() const;
+    const QString getPid() const;
+    const QString getResidence() const;
 
     // setters
-    void setName(string name);
-    void setSurname(string surname);
-    void setPid(string pid);
-    void setResidence(string residence);
+    void setName(QString name);
+    void setSurname(QString surname);
+    void setPid(QString pid);
+    void setResidence(QString residence);
 };
 
 #endif // PERSON_H

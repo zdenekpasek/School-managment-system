@@ -4,6 +4,9 @@
 #include <QRegExpValidator>
 
 
+
+static Student *stud = new Student();
+
 addStudent::addStudent(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::addStudent)
@@ -66,6 +69,7 @@ void addStudent::on_addStudentButton_clicked()
    QMessageBox msgBox;
    Database conn;
 
+
    QString name = ui->lineEdit_name->text();
    QString surname = ui->lineEdit_surname->text();
    QString pid = ui->lineEdit_pid->text();
@@ -79,6 +83,8 @@ void addStudent::on_addStudentButton_clicked()
            conn.addStudentToDB(name, surname, pid, residence, registration, subjects);
            msgBox.setText("Sucessfully added student to databse.");
            msgBox.exec();
+           //stud->addStudentToVector(name, surname, pid, residence, registration, subjects, students);
+
        } catch (const char *er) {
            qDebug() << er;
            msgBox.setText(er);

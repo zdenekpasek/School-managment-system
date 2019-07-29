@@ -5,7 +5,7 @@ Student::Student()
 
 }
 
-Student::Student(string name, string surname, string pid, string residence, string registration, int subjects)
+Student::Student(QString &name, QString &surname, QString &pid, QString &residence, QString &registration, int subjects)
 {
     this->name = name;
     this->surname = surname;
@@ -16,7 +16,7 @@ Student::Student(string name, string surname, string pid, string residence, stri
 
 }
 
-const string Student::getReg() const
+const QString Student::getReg() const
 {
     return registration;
 }
@@ -26,7 +26,7 @@ const int Student::getSubjects() const
     return subjects;
 }
 
-void Student::setReg(string registration)
+void Student::setReg(QString registration)
 {
     this->registration = registration;
 }
@@ -36,11 +36,10 @@ void Student::setSubjects(int subjects)
     this->subjects = subjects;
 }
 
-
-
-/*
-void Student::addStudent(string &name, string &surname, string &pid, string &residence, vector<Student *> &students)
+void Student::addStudentToVector(QString &name, QString &surname, QString &pid, QString &residence, QString &registration, int &subjects, vector<Student *> &students)
 {
-    students.push_back(new Student(name, surname, pid, residence));
+    students.push_back(new Student(name, surname, pid, residence, registration, subjects));
 }
-*/
+
+
+

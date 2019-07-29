@@ -5,42 +5,42 @@ person::person()
 
 }
 
-const string person::getName() const
+const QString person::getName() const
 {
     return name;
 }
 
-const string person::getSurname() const
+const QString person::getSurname() const
 {
     return surname;
 }
 
-const string person::getPid() const
+const QString person::getPid() const
 {
     return pid;
 }
 
-const string person::getResidence() const
+const QString person::getResidence() const
 {
     return residence;
 }
 
-void person::setName(string name)
+void person::setName(QString name)
 {
     this->name = name;
 }
 
-void person::setSurname(string surname)
+void person::setSurname(QString surname)
 {
     this->surname = surname;
 }
 
-void person::setPid(string pid)
+void person::setPid(QString pid)
 {
     this->pid = pid;
 }
 
-void person::setResidence(string residence)
+void person::setResidence(QString residence)
 {
     this->residence = residence;
 }

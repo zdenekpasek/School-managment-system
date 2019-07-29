@@ -38,6 +38,5 @@ void removeStudent::on_removeStudentButton_clicked()
         msgBox.setText(er);
         msgBox.exec();
     }
-
-
+    ui->lineEdit_surname->clear();
 }

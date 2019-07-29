@@ -2,15 +2,16 @@
 #define TEACHER_H
 
 #include "person.h"
+#include <QString>
 
 using namespace std;
 
 class teacher:public person
 {
 
-    string qualification;
-    string exp;
-    string subject;
+    QString qualification;
+    QString exp;
+    QString subject;
 
 public:
     // constructors
@@ -20,14 +21,14 @@ public:
     ~teacher();
 
     // getters
-    const string getQual() const;
-    const string getExp() const;
-    const string getSubject() const;
+    const QString getQual() const;
+    const QString getExp() const;
+    const QString getSubject() const;
 
     // setters
-    void setQual(string qualification);
-    void setExp(string exp);
-    void setSubject(string subject);
+    void setQual(QString qualification);
+    void setExp(QString exp);
+    void setSubject(QString subject);
 
 };
 

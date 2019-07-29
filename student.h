@@ -5,33 +5,34 @@
 #include <string>
 #include <vector>
 #include "person.h"
+#include <QString>
 
 using namespace std;
 
 class Student:public person
 {
 
-    string registration;
+    QString registration;
     int subjects;
 
 public:
 
     // constructors
     Student();
-    Student(string name, string surname, string pid, string residence, string registration, int subjects);
+    Student(QString &name, QString &surname, QString &pid, QString &residence, QString &registration, int subjects);
 
     // destructor
     ~Student();
 
     // getters
-    const string getReg() const;
+    const QString getReg() const;
     const int getSubjects() const;
 
     // setters
-    void setReg(string registration);
+    void setReg(QString registration);
     void setSubjects(int subjects);
 
-    void addStudent(string &name, string &surname, string &pid, string &residence, vector<Student *> &students);
+    void addStudentToVector(QString &name, QString &surname, QString &pid, QString &residence, QString &registration, int &subjects, vector<Student *> &students);
 };
 
 #endif // STUDENT_H
