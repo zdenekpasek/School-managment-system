@@ -17,6 +17,8 @@ public:
 
 
 
+
+
 private:
     Ui::addStudent *ui;
 
@@ -27,6 +29,9 @@ private slots:
     void on_homeButton_clicked();
     void on_addStudentButton_clicked();
     void clearLineEdits();
+    bool checkLineEditString(QString le, QString le2, QString le3, QString le4, QString le5);
+    bool checkLineEditInt(int subj);
+
 };
 
 #endif // ADDSTUDENT_H

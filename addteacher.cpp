@@ -36,14 +36,17 @@ void addteacher::on_addTeacherButton_clicked()
     QString experience = ui->lineEdit_exp->text();
     QString subject = ui->lineEdit_subject->text();
 
+    QMessageBox msgBox;
     Database conn;
 
     try {
         conn.addTeachertToDB(name, surname, pid, residence, qualification, experience, subject);
+        msgBox.setText("Sucessfully added teacher to databse.");
+        msgBox.exec();
     } catch (const char *er) {
-
+        qDebug() << er;
+        msgBox.setText(er);
+        msgBox.exec();
     }
-
-
     clearLineEdits();
 }

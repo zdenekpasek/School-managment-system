@@ -23,22 +23,31 @@ void showStudents::on_listStudentsButton_clicked()
 {
     Database conn;
     QSqlQueryModel * model = new QSqlQueryModel();
-    conn.connectToDB();
+    QMessageBox msgBox;
+    try {
+        conn.connectToDB();
 
-    QSqlQuery* q = new QSqlQuery(conn.mydb);
-    bool prepRet = q->prepare("SELECT * FROM students");
-    if (!prepRet) {
-      qDebug() << q->lastError().text();
-      return;
-    }
-    q->exec();
-    if (!q->exec()) {
-      qDebug() << q->lastError().text();
-      return;
-    }
-    model->setQuery(*q);
-    ui->tableView->setModel(model);
+        QSqlQuery* q = new QSqlQuery(conn.mydb);
+        bool prepRet = q->prepare("SELECT * FROM students");
+        if (!prepRet) {
+          qDebug() << q->lastError().text();
+          return;
+        }
+        q->exec();
+        if (!q->exec()) {
+          qDebug() << q->lastError().text();
+          return;
+        }
+        model->setQuery(*q);
+        ui->tableView->setModel(model);
 
-    conn.connClose();
-    qDebug() << "rowCount: " << (model->rowCount());
+        conn.connClose();
+        qDebug() << "rowCount: " << (model->rowCount());
+
+    } catch (const char * er) {
+        qDebug() << er;
+        msgBox.setText(er);
+        msgBox.exec();
+    }
+
 }
