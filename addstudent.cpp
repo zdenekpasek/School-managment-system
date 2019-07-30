@@ -13,7 +13,7 @@ addStudent::addStudent(QWidget *parent) :
 {
     ui->setupUi(this);
 
-   // validators and regex's
+    // validators and regex's
     ui->lineEdit_subjects->setValidator(new QIntValidator(1, 20, this));
     QRegExp rx("^[A-Za-z]{3,16}\\s[A-Za-z]{3,16}$");
     QRegExp rx2("^\\d{6}\\\\\\d{4}$");
@@ -21,7 +21,7 @@ addStudent::addStudent(QWidget *parent) :
     QValidator *characterVal = new QRegExpValidator(rx, this);
     QValidator *pidVal = new QRegExpValidator(rx2, this);
     QValidator *regVal = new QRegExpValidator(rx3, this);
-    //ui->lineEdit_name->setValidator(characterVal);
+    ui->lineEdit_name->setValidator(characterVal);
     ui->lineEdit_surname->setValidator(characterVal);
     ui->lineEdit_residence->setValidator(characterVal);
     ui->lineEdit_pid->setValidator(pidVal);
@@ -61,8 +61,6 @@ bool addStudent::checkLineEditInt(int subj)
 
     } return false;
 }
-
-
 
 void addStudent::on_addStudentButton_clicked()
 {

@@ -8,6 +8,7 @@ addteacher::addteacher(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // validators and regex's
     QRegExp rx("^[A-Za-z]{3,16}\\s[A-Za-z]{3,16}$");
     QRegExp rx2("^\\d{6}\\\\\\d{4}$");
     QRegExp rx3("^\\d{2}\\-\\d{2}\\-\\d{4}$");

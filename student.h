@@ -40,6 +40,9 @@ public:
 
     void testFunc(QList<Student*> &list);
 
+
+
+
 };
 
 #endif // STUDENT_H
