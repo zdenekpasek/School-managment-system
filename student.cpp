@@ -52,14 +52,9 @@ void Student::printList(QList<Student *> &list)
             qDebug() << student->name << student->surname << student->pid << student->residence << student->registration << student->subjects;
         }
 
-
 }
 
-void Student::testFunc(QList<Student *> &list)
-{
 
-
-}
 
 
 

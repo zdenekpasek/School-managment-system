@@ -31,8 +31,6 @@ public:
     void setPid(QString pid);
     void setResidence(QString residence);
 
-
-
 };
 
 #endif // PERSON_H

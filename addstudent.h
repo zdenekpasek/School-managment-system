@@ -24,9 +24,6 @@ public:
 private:
     Ui::addStudent *ui;
 
-
-
-
 signals:
     void HomeClicked();
 private slots:

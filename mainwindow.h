@@ -33,7 +33,6 @@ private slots:
     void on_listStudentsButton_clicked();
     void on_searchStudentButton_clicked();
     void on_addTeacherButton_clicked();
-
     void on_listTeachersButton_clicked();
 
 private:

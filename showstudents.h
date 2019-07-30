@@ -16,17 +16,12 @@ public:
     explicit showStudents(QWidget *parent = nullptr);
     ~showStudents();
 
-
-
-
 signals:
     void HomeClicked();
 private slots:
     void on_homeButton_clicked();
     void on_listStudentsButton_clicked();
-
     void on_resetDbButton_clicked();
-
     void on_updateDbButton_clicked();
 
 private:

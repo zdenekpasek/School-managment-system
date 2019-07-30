@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // bind all ui windows to specific index //
     ui->stackedWidget->insertWidget(1, &studentAdd);
     ui->stackedWidget->insertWidget(2, &studentRemove);
     ui->stackedWidget->insertWidget(3, &studentShow);
@@ -20,16 +21,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->insertWidget(6, &teacherShow);
 
 
-
-
+    // connect home button //
     connect(&studentAdd, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&studentRemove, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&studentShow, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&studentSearch, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&teacherShow, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
     connect(&teacherAdd, SIGNAL(HomeClicked()), this, SLOT(moveHome()));
-
-
 
 }
 
@@ -43,15 +41,15 @@ void MainWindow::on_closeButton_clicked()
     this->close();
 }
 
-
-void MainWindow::on_addStudentButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
 void MainWindow::moveHome()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+// change window when button clicked (every window has its specific index) //
+void MainWindow::on_addStudentButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::on_removeStudentButton_clicked()

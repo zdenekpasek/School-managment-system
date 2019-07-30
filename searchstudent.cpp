@@ -26,12 +26,13 @@ void searchStudent::on_searchButton_clicked()
     QMessageBox msgBox;
 
       QString input = ui->lineEdit_surname->text();
+
+      // search student in database by surname and display values //
       if(ui->comboBox->currentText()=="Surname"){
           try {
               conn.connectToDB();
 
               QSqlQuery* q = new QSqlQuery(conn.mydb);
-
               bool prepRet = q->prepare("SELECT * FROM students WHERE surname ='"+input+"'");
               if (!prepRet) {
                 qDebug() << q->lastError().text();
@@ -48,7 +49,6 @@ void searchStudent::on_searchButton_clicked()
               conn.connClose();
               qDebug() << "rowCount: " << (model->rowCount());
 
-
           } catch (const char * er) {
               qDebug() << er;
               msgBox.setText(er);
@@ -57,6 +57,7 @@ void searchStudent::on_searchButton_clicked()
           ui->lineEdit_surname->clear();
 
 }
+      // search student in database by pid and display values //
       if(ui->comboBox->currentText()=="Personal ID"){
           try {
               conn.connectToDB();
@@ -78,7 +79,6 @@ void searchStudent::on_searchButton_clicked()
               conn.connClose();
               qDebug() << "rowCount: " << (model->rowCount());
 
-
           } catch (const char * er) {
               qDebug() << er;
               msgBox.setText(er);
@@ -87,6 +87,7 @@ void searchStudent::on_searchButton_clicked()
           ui->lineEdit_surname->clear();
 
 }
+      // search student in database by residence and display values //
       if(ui->comboBox->currentText()=="Residence"){
           try {
               conn.connectToDB();
@@ -108,7 +109,6 @@ void searchStudent::on_searchButton_clicked()
               conn.connClose();
               qDebug() << "rowCount: " << (model->rowCount());
 
-
           } catch (const char * er) {
               qDebug() << er;
               msgBox.setText(er);
@@ -117,6 +117,5 @@ void searchStudent::on_searchButton_clicked()
           ui->lineEdit_surname->clear();
 
 }
-
 
 }

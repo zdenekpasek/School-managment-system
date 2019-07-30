@@ -20,7 +20,6 @@ void removeStudent::on_homeButton_clicked()
     emit HomeClicked();
 }
 
-
 void removeStudent::on_removeStudentButton_clicked()
 {
     QMessageBox msgBox;

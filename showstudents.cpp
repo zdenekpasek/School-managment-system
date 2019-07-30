@@ -19,6 +19,7 @@ void showStudents::on_homeButton_clicked()
     emit HomeClicked();
 }
 
+// select students from database and display values to tableView //
 void showStudents::on_listStudentsButton_clicked()
 {
     Database conn;
@@ -53,18 +54,19 @@ void showStudents::on_listStudentsButton_clicked()
 
 }
 
+// delete everything from database students //
 void showStudents::on_resetDbButton_clicked()
 {
     QMessageBox msgBox;
     Database conn;
+    QString table = "students";
 
     try {
         conn.connectToDB();
-        conn.resetDB();
+        conn.resetDB(table);
         msgBox.setText("Sucessfully reseted database.");
         msgBox.exec();
         ui->labelMessage->setText("Please list database again.");
-
 
     } catch (const char * er) {
         qDebug() << er;
@@ -74,6 +76,7 @@ void showStudents::on_resetDbButton_clicked()
 
 }
 
+// update values in database //
 void showStudents::on_updateDbButton_clicked()
 {
     QMessageBox msgBox;
@@ -82,6 +85,7 @@ void showStudents::on_updateDbButton_clicked()
     QString value = ui->lineEdit_value->text();
     QString column;
 
+    // update residence //
     if(ui->comboBox->currentText()=="Residence"){
         column = "residence";
         try {
@@ -99,6 +103,7 @@ void showStudents::on_updateDbButton_clicked()
         }
     }
 
+    // update subjects //
     if(ui->comboBox->currentText()=="Subjects"){
         column = "subjects";
         try {

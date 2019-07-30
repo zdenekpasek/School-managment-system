@@ -19,6 +19,7 @@ void showteachers::on_homeButton_clicked()
     emit HomeClicked();
 }
 
+// select teachers from database and display values to tableView //
 void showteachers::on_listTeachersButton_clicked()
 {
     Database conn;
@@ -52,14 +53,16 @@ void showteachers::on_listTeachersButton_clicked()
     }
 }
 
+// delete everything from database teachers //
 void showteachers::on_resetDbButton_clicked()
 {
     QMessageBox msgBox;
     Database conn;
+    QString table = "teachers";
 
     try {
         conn.connectToDB();
-        conn.resetDB();
+        conn.resetDB(table);
         msgBox.setText("Sucessfully reseted database.");
         msgBox.exec();
         ui->labelMessage->setText("Please list database again.");

@@ -8,7 +8,7 @@ Database::Database()
 }
 
 
-
+// close connection to database //
 void Database::connClose()
 {
     mydb.close();
@@ -16,6 +16,7 @@ void Database::connClose()
     //mydb.removeDatabase(QSqlDatabase::defaultConnection);
 }
 
+// connection to database //
 void Database::connectToDB()
 {
     qDebug() << "Connecting to database...";
@@ -23,16 +24,13 @@ void Database::connectToDB()
     mydb.setDatabaseName("C:/Users/zdenek/Documents/ManagmentSystem/database.db");
 
     if(mydb.open()){
-
     qDebug() << "DB connected";
-
     } else {
-
     qDebug() << "DB not connected";
-
     }
 }
 
+// adding student to database //
 void Database::addStudentToDB(QString name, QString surname, QString pid, QString residence, QString registration, int subjects)
 {
     connectToDB();
@@ -49,12 +47,11 @@ void Database::addStudentToDB(QString name, QString surname, QString pid, QStrin
         qDebug()<< "Error adding values to the table.";
     } else {
         qDebug()<< "Sucessfully added student to the table.";
-
 }
     connClose();
-
 }
 
+// adding teacher to database //
 void Database::addTeachertToDB(QString name, QString surname, QString pid, QString residence, QString qualification, QString experience, QString subject)
 {
     connectToDB();
@@ -70,15 +67,13 @@ void Database::addTeachertToDB(QString name, QString surname, QString pid, QStri
 
     if(!q.exec()){
         qDebug()<< "Error adding values to the table.";
-
     } else {
         qDebug()<< "Sucessfully added teacher to the table.";
-
 }
     connClose();
-
 }
 
+// removing student from database //
 void Database::removeStudentFromDB(QString surname)
 {
     connectToDB();
@@ -87,28 +82,28 @@ void Database::removeStudentFromDB(QString surname)
 
     if(!q.exec()){
         qDebug()<< "Error while removing values from table.";
-
     } else {
         qDebug()<< "Sucessfully removed student from table.";
 }
     connClose();
 }
 
-void Database::resetDB()
+// deleting everything from database //
+void Database::resetDB(QString table)
 {
     connectToDB();
     QSqlQuery q;
-    q.prepare("DELETE FROM teachers");
+    q.prepare("DELETE FROM '"+table+"'");
 
     if(!q.exec()){
         qDebug()<< "Error while reseting database.";
-
     } else {
         qDebug()<< "Sucessfully reseted database.";
 }
     connClose();
 }
 
+// update data in database //
 void Database::updateDB(QString column, QString newValue, QString user){
     connectToDB();
     QSqlQuery q;

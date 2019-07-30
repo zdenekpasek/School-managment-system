@@ -38,11 +38,6 @@ public:
     void addStudentToList(QString name, QString surname, QString pid, QString residence, QString registration, int subjects, QList<Student*> &studs);
     void printList(QList<Student*> &list);
 
-    void testFunc(QList<Student*> &list);
-
-
-
-
 };
 
 #endif // STUDENT_H
