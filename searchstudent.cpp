@@ -31,6 +31,7 @@ void searchStudent::on_searchButton_clicked()
               conn.connectToDB();
 
               QSqlQuery* q = new QSqlQuery(conn.mydb);
+
               bool prepRet = q->prepare("SELECT * FROM students WHERE surname ='"+input+"'");
               if (!prepRet) {
                 qDebug() << q->lastError().text();

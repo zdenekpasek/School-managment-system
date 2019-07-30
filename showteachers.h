@@ -20,8 +20,8 @@ signals:
     void HomeClicked();
 private slots:
     void on_homeButton_clicked();
-
     void on_listTeachersButton_clicked();
+    void on_resetDbButton_clicked();
 
 private:
     Ui::showteachers *ui;

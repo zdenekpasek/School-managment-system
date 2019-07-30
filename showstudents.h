@@ -25,6 +25,10 @@ private slots:
     void on_homeButton_clicked();
     void on_listStudentsButton_clicked();
 
+    void on_resetDbButton_clicked();
+
+    void on_updateDbButton_clicked();
+
 private:
     Ui::showStudents *ui;
 };

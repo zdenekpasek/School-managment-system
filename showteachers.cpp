@@ -50,6 +50,27 @@ void showteachers::on_listTeachersButton_clicked()
         msgBox.setText(er);
         msgBox.exec();
     }
+}
 
+void showteachers::on_resetDbButton_clicked()
+{
+    QMessageBox msgBox;
+    Database conn;
+
+    try {
+        conn.connectToDB();
+        conn.resetDB();
+        msgBox.setText("Sucessfully reseted database.");
+        msgBox.exec();
+        ui->labelMessage->setText("Please list database again.");
+
+
+    } catch (const char * er) {
+        qDebug() << er;
+        msgBox.setText(er);
+        msgBox.exec();
+    }
 
 }
+
+

@@ -94,6 +94,37 @@ void Database::removeStudentFromDB(QString surname)
     connClose();
 }
 
+void Database::resetDB()
+{
+    connectToDB();
+    QSqlQuery q;
+    q.prepare("DELETE FROM teachers");
+
+    if(!q.exec()){
+        qDebug()<< "Error while reseting database.";
+
+    } else {
+        qDebug()<< "Sucessfully reseted database.";
+}
+    connClose();
+}
+
+void Database::updateDB(QString column, QString newValue, QString user){
+    connectToDB();
+    QSqlQuery q;
+    q.prepare("UPDATE students SET '"+column+"' ='"+newValue+"' WHERE surname ='"+user+"'");
+
+    if(!q.exec()){
+        qDebug()<< "Error updating database.";
+
+    } else {
+        qDebug()<< "Sucessfully updated database.";
+}
+    connClose();
+
+
+}
+
 
 
 

@@ -85,6 +85,7 @@ void addStudent::on_addStudentButton_clicked()
            stud->printList(list);
            msgBox.setText("Sucessfully added student to databse.");
            msgBox.exec();
+           stud->testFunc(list);
 
        } catch (const char *er) {
            qDebug() << er;

@@ -51,7 +51,14 @@ void Student::printList(QList<Student *> &list)
     for(auto* student : list){
             qDebug() << student->name << student->surname << student->pid << student->residence << student->registration << student->subjects;
         }
-        qDebug() << "??";
+
+
+}
+
+void Student::testFunc(QList<Student *> &list)
+{
+
+
 }
 
 
