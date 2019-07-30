@@ -6,6 +6,8 @@
 #include <vector>
 #include "person.h"
 #include <QString>
+#include <QList>
+#include <QDebug>
 
 using namespace std;
 
@@ -33,6 +35,9 @@ public:
     void setSubjects(int subjects);
 
     void addStudentToVector(QString &name, QString &surname, QString &pid, QString &residence, QString &registration, int &subjects, vector<Student *> &students);
+    void addStudentToList(QString name, QString surname, QString pid, QString residence, QString registration, int subjects, QList<Student*> &studs);
+    void printList(QList<Student*> &list);
+
 };
 
 #endif // STUDENT_H

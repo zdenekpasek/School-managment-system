@@ -81,9 +81,10 @@ void addStudent::on_addStudentButton_clicked()
    if(checkLineEditString(name, surname, pid, residence, registration) && checkLineEditInt(subjects)){
        try {
            conn.addStudentToDB(name, surname, pid, residence, registration, subjects);
+           stud->addStudentToList(name, surname, pid, residence, registration, subjects, list);
+           stud->printList(list);
            msgBox.setText("Sucessfully added student to databse.");
            msgBox.exec();
-           //stud->addStudentToVector(name, surname, pid, residence, registration, subjects, students);
 
        } catch (const char *er) {
            qDebug() << er;

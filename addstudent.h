@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <student.h>
+#include <QList>
 
 
 namespace Ui {
@@ -17,7 +18,7 @@ public:
     explicit addStudent(QWidget *parent = nullptr);
     ~addStudent();
     vector<Student *> students;
-
+    QList<Student*> list;
 
 
 private:
